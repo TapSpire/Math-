@@ -217,7 +217,7 @@ function handleWordClick() {
   const correctSound = document.getElementById("correct-sound");
   const clickSound = document.getElementById("click-sound");
 
-  if (correctWords.includes(currentWord)) {
+  if (correctEquations.includes(currentWord)) {
     score++;
     score += lastClickedTextValue;
     correctSound.currentTime = 0;
@@ -225,7 +225,7 @@ function handleWordClick() {
     showBonusMessage("Correct!", "green");
     hoverText.textContent = "Good!";
     hoverText.style.color = "green";
-  } else if (incorrectWords.includes(currentWord)) {
+  } else if (incorrectEquations.includes(currentWord)) {
     score--;
     score -= lastClickedTextValue;
     clickSound.currentTime = 0;
@@ -265,5 +265,6 @@ function handleWordClick() {
   currentWord = getRandomWord();
   wordHolder.textContent = currentWord;
 }
+
 
 restartBtn.addEventListener("click", startGame);
