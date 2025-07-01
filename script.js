@@ -86,14 +86,19 @@ function createGrid() {
   }
 }
 
-function getRandomWord() {
-  if (Math.random() < 0.5) {
-    currentWord = correctWords[Math.floor(Math.random() * correctWords.length)];
-  } else {
-    currentWord = incorrectWords[Math.floor(Math.random() * incorrectWords.length)];
+function getRandomWord() 
+{
+  if (Math.random() < 0.5) 
+  {
+    currentWord = correctEquations[Math.floor(Math.random() * correctEquations.length)];
+  } 
+  else 
+  {
+    currentWord = incorrectEquations[Math.floor(Math.random() * incorrectEquations.length)];
   }
   return currentWord;
 }
+
 
 function showBonusMessage(message, color) {
   if (bonusMessageVisible) return;
