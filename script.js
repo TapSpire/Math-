@@ -14,53 +14,34 @@ const textContent = [
   '0', '1', '2', '1', '0',
 ];
 
-const correctWords = [
-  "Accommodate", "Achieve", "Across", "Aggressive", "A lot",
-  "Amateur", "Apparent", "Argument", "Basically", "Beginning",
-  "Believe", "Business", "Calendar", "Category", "Collectible",
-  "Column", "Committed", "Conscience", "Conscious", "Definitely",
-  "Discipline", "Drunkenness", "Embarrass", "Equipment", "Exaggerate",
-  "Exceed", "Experience", "Explanation", "Familiar", "Finally",
-  "Foreign", "Friend", "Generally", "Government", "Grammar",
-  "Guarantee", "Harass", "Height", "Humorous", "Immediate",
-  "Independent", "Interrupt", "Irresistible", "Knowledge", "Leisure",
-  "Library", "License", "Maintenance", "Maneuver", "Medieval",
-  "Memento", "Millennium", "Miniature", "Minimum", "Miscellaneous",
-  "Necessary", "Noticeable", "Occasion", "Occasionally", "Occurred",
-  "Occurrence", "Opportunity", "Pastime", "Perseverance", "Personnel",
-  "Playwright", "Possession", "Preferred", "Prejudice", "Principal",
-  "Privilege", "Probably", "Proceed", "Professor", "Pronunciation",
-  "Publicly", "Questionnaire", "Receive", "Recommend", "Referred",
-  "Repetition", "Restaurant", "Ridiculous", "Rhythm", "Schedule",
-  "Secretary", "Separate", "Similar", "Special", "Strength",
-  "Success", "Supersede", "Surprise", "Temperature", "Twelfth",
-  "Tomorrow", "Until", "Vacuum", "Weather", "Weird",
-  "Wherever", "Which", "Withhold", "Writing", "Yield"
+const correctEquations = [
+  "5 + 3 = 8", "9 - 4 = 5", "6 × 2 = 12", "12 ÷ 4 = 3", "7 + 6 = 13",
+  "15 - 7 = 8", "3 × 5 = 15", "20 ÷ 5 = 4", "8 + 2 = 10", "14 - 6 = 8",
+  "9 × 3 = 27", "16 ÷ 2 = 8", "4 + 4 = 8", "18 - 9 = 9", "7 × 2 = 14",
+  "10 ÷ 2 = 5", "11 + 5 = 16", "13 - 3 = 10", "6 × 4 = 24", "24 ÷ 3 = 8",
+  "2 + 9 = 11", "17 - 8 = 9", "5 × 3 = 15", "21 ÷ 7 = 3", "3 + 3 = 6",
+  "10 - 5 = 5", "4 × 4 = 16", "12 ÷ 6 = 2", "1 + 6 = 7", "8 - 3 = 5",
+  "9 + 0 = 9", "6 ÷ 3 = 2", "7 + 1 = 8", "10 + 10 = 20", "100 ÷ 10 = 10",
+  "2 × 6 = 12", "30 ÷ 5 = 6", "25 - 5 = 20", "13 + 2 = 15", "3 × 4 = 12",
+  "18 ÷ 6 = 3", "9 + 6 = 15", "40 - 10 = 30", "6 + 5 = 11", "28 ÷ 4 = 7",
+  "8 × 3 = 24", "36 ÷ 6 = 6", "4 + 9 = 13", "7 + 7 = 14", "15 ÷ 3 = 5"
 ];
 
-const incorrectWords = [
-  "Acommodate", "Acheive", "Accross", "Aggresive", "Alot",
-  "Amature", "Apparant", "Arguement", "Basicly", "Begining",
-  "Belive", "Buisness", "Calender", "Catagory", "Collectable",
-  "Colum", "Commited", "Conscence", "Concious", "Definately",
-  "Disipline", "Drunkeness", "Embarass", "Equiptment", "Exagerate",
-  "Excede", "Experiance", "Explanaton", "Familar", "Finaly",
-  "Foriegn", "Freind", "Generalley", "Goverment", "Grammer",
-  "Gaurantee", "Harrass", "Hieght", "Humerous", "Imediate",
-  "Independant", "Interupt", "Irresistable", "Knowlege", "Liesure",
-  "Libary", "Lisense", "Maintanance", "Maneouvre", "Midieval",
-  "Momento", "Millenium", "Minature", "Minimun", "Miscelaneous",
-  "Necesary", "Noticable", "Ocasion", "Occasionly", "Ocurred",
-  "Occurence", "Oppertunity", "Pasttime", "Perseverence", "Personel",
-  "Playwrite", "Posession", "Prefered", "Predjudice", "Principle",
-  "Priviledge", "Probly", "Procede", "Proffessor", "Pronounciation",
-  "Publically", "Questionaire", "Recieve", "Reccomend", "Refered",
-  "Repitition", "Restaraunt", "Rediculous", "Rythm", "Schedual",
-  "Secratary", "Seperate", "Similiar", "Specal", "Strenght",
-  "Sucess", "Supercede", "Suprise", "Temprature", "Twelth",
-  "Tommorow", "Untill", "Vacume", "Wether", "Wierd",
-  "Whereever", "Wich", "Withold", "Writting", "Yeild"
+
+const incorrectEquations = [
+  "5 + 3 = 9", "9 - 4 = 6", "6 × 2 = 10", "12 ÷ 4 = 2", "7 + 6 = 14",
+  "15 - 7 = 6", "3 × 5 = 10", "20 ÷ 5 = 3", "8 + 2 = 9", "14 - 6 = 9",
+  "9 × 3 = 26", "16 ÷ 2 = 6", "4 + 4 = 9", "18 - 9 = 10", "7 × 2 = 15",
+  "10 ÷ 2 = 4", "11 + 5 = 15", "13 - 3 = 11", "6 × 4 = 23", "24 ÷ 3 = 6",
+  "2 + 9 = 10", "17 - 8 = 10", "5 × 3 = 10", "21 ÷ 7 = 2", "3 + 3 = 5",
+  "10 - 5 = 6", "4 × 4 = 15", "12 ÷ 6 = 3", "1 + 6 = 8", "8 - 3 = 6",
+  "9 + 0 = 8", "6 ÷ 3 = 1", "7 + 1 = 9", "10 + 10 = 19", "100 ÷ 10 = 11",
+  "2 × 6 = 13", "30 ÷ 5 = 5", "25 - 5 = 15", "13 + 2 = 14", "3 × 4 = 10",
+  "18 ÷ 6 = 2", "9 + 6 = 14", "40 - 10 = 25", "6 + 5 = 12", "28 ÷ 4 = 6",
+  "8 × 3 = 23", "36 ÷ 6 = 7", "4 + 9 = 14", "7 + 7 = 13", "15 ÷ 3 = 6"
 ];
+
+
 
 let currentWord = "";
 let score = 0;
